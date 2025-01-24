@@ -3,18 +3,22 @@ import './App.css';
 import searchIcon from './assets/search.png';
 import WeatherDetails from './weather';
 import clearIcon from './assets/sun.png';
-import cloudIcon from './assets/cloudy.png';
 import drizzleIcon from './assets/drizzle.png';
 import rainIcon from './assets/rain.png';
 import snowIcon from './assets/snow.png';
+import fogIcon from './assets/fog.png';
+import showerIcon from './assets/shower.png';
+import thunderIcon from './assets/thunderstrom.png';
+import cloudsIcon from './assets/clouds.png';
+
+//import { useForm } from 'react-hook-form';
 
 function App() {
   const api_key = 'd4ff145f4bacbc2826c8a4177fe60d1b';
-
   const [icon, setIcon] = useState(snowIcon);
   const [temp, setTemp] = useState(0);
   const [city, setCity] = useState('none');
-  const [country, setCountry] = useState('');
+  const [country, setCountry] = useState('-');
   const [lat, setLat] = useState(0);
   const [long, setLong] = useState(0);
   const [humidity, setHumidity] = useState(0);
@@ -26,18 +30,22 @@ function App() {
   const weatherIconMap = {
     '01d': clearIcon,
     '01n': clearIcon,
-    '02d': cloudIcon,
-    '02n': cloudIcon,
+    '02d': cloudsIcon,
+    '02n': cloudsIcon,
     '03d': drizzleIcon,
     '03n': drizzleIcon,
     '04d': drizzleIcon,
     '04n': drizzleIcon,
-    '09d': rainIcon,
-    '09n': rainIcon,
+    '09d': showerIcon,
+    '09n': showerIcon,
     '10d': rainIcon,
     '10n': rainIcon,
+    '11d':thunderIcon,
+    '11n':thunderIcon,
     '13d': snowIcon,
     '13n': snowIcon,
+    '50d':fogIcon,
+    '50n':fogIcon,
   };
 
   const search = async () => {
@@ -72,7 +80,6 @@ function App() {
       setIcon(weatherIconMap[weatherIconCode] || clearIcon);}
     } catch (error) {
       setErrorMessage('An error occurred. Please try again.');
-      console.error(error);
     }
     finally{
       setLoading(false)

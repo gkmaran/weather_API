@@ -1,73 +1,142 @@
-.image{
+.image {
     text-align: center;
-    margin: 20px 0px;
+    margin: 20px 0;
 }
-.image img{
+
+.image img {
     width: 160px;
     height: 160px;
+    border-radius: 50%; 
+    border: 3px solid rgba(126, 188, 208, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
-.temp,
-.city,
-.country{
+
+.image img:hover {
+    transform: scale(1.1); 
+}
+
+.temp, .city, .country {
     text-align: center;
-    margin: 5px 0px;
+    margin: 5px 0;
     text-transform: uppercase;
     font-size: 1.5rem;
     color: #333;
 }
-.temp{
-    font-weight: bold; 
+
+.temp {
+    font-weight: bold;
+    font-size: 2rem; 
+    color: rgb(255, 87, 51);
 }
-.city{
+
+.city {
     color: rgb(40, 11, 228);
-    font-weight: 400;
+    font-weight: 500;
 }
-.country{
+
+.country {
     color: rgb(142, 139, 139);
-    font-size: 15px;
+    font-size: 1rem;
     font-weight: 400;
 }
-.cord{
+
+
+.cord {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 0px;
-    justify-content: space-around;
-}.cord div{
+    margin: 10px 0;
+    gap: 15px;
+}
+
+.cord div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 10px;
+    background-color: rgba(2, 174, 231, 0.119);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.cord div span{
-    font-size: 15px;
+
+.cord div span {
+    font-size: 14px;
+    color: #666;
 }
-.cord div span:nth-child(2){
+
+.cord div span:nth-child(2) {
     font-size: 18px;
     font-weight: bold;
+    color: #333;
 }
-.element img{
-    width: 40px;
-    height: 40px;
-}
-.data-container{
+
+
+.data-container {
     display: flex;
     justify-content: space-between;
-    margin: 10px 0px;
+    margin: 10px 0;
     padding: 10px;
+    background-color: #f4f3f4;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.element{
+
+.element {
     text-align: center;
 }
-.text{
-    margin: 5px 0px;
+
+.element img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+.text {
+    margin: 5px 0;
     font-size: 18px;
+    font-weight: 500;
+    color: #444;
 }
-.data{
-    margin: 10px 0px;
+
+.data {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
 }
-.wind-percent,
-.humidity-percent{
+
+.wind-percent, .humidity-percent {
     font-weight: bold;
+    color: rgb(255, 87, 51);
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+    .image img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .temp {
+        font-size: 1.8rem;
+    }
+
+    .city, .country {
+        font-size: 1.2rem;
+    }
+
+    .cord {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cord div {
+        width: 100%;
+    }
+
+    .data-container {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
